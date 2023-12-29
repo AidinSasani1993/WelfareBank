@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "kTGbwKCCtEGP+9YEKHJgi1e1RlEBLTji29oqomYLF2YnBKk+HGCryHN4SdNfkXCDvtlfeuOlLDfKkqw2LtFZJw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\Refah.Application.Contract.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aidin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\6.0.0\\microsoft.extensions.hosting.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\aidin\\.nuget\\packages\\tanvirarjel.extensions.microsoft.dependencyinjection\\2.2.0\\tanvirarjel.extensions.microsoft.dependencyinjection.2.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
