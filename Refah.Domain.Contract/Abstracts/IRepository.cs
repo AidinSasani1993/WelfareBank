@@ -11,6 +11,5 @@ namespace Refah.Domain.Contract.Abstracts
         Task DeleteAsync(T_Key id);
         Task<bool> Exists(Expression<Func<TEntity, bool>> expression);
         Task SaveChangesAsync();
-        List<TEntity> GetAll();
     }
 }

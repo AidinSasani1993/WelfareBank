@@ -6,7 +6,7 @@ namespace Refah.Domain.Aggregates
     {
         #region [-props-]
         public double TotalAmount { get; private set; }
-        public bool IsCanceled { get; private set; } = false;
+        public bool? IsCanceled { get; private set; } = false;
         public CustomUser CustomUser { get; private set; }
         public Guid UserRef { get; private set; } 
         #endregion
@@ -22,7 +22,7 @@ namespace Refah.Domain.Aggregates
         #endregion
 
         #region [-Modify(double totalAmount, bool isCanceled, Guid userRef)-]
-        public void Modify(double totalAmount, bool isCanceled, Guid userRef)
+        public void Modify(double totalAmount, bool? isCanceled, Guid userRef)
         {
             TotalAmount = totalAmount;
             IsCanceled = isCanceled;

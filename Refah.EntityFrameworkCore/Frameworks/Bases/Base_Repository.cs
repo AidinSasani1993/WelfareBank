@@ -63,11 +63,5 @@ namespace Refah.EntityFrameworkCore.Frameworks.Bases
             DbContext.Entry(input).State = EntityState.Modified;
             await SaveChangesAsync();
         }
-
-        public List<T_Entity> GetAll()
-        {
-            var query = DbSet.ToList();
-            return query;
-        }
     }
 }
