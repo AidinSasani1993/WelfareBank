@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Refah.Application.Abstracts.Services.Order_Services;
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.Order_Dtos;
@@ -33,6 +34,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-GetListAsync()-]
         [HttpGet]
+        [Authorize(Roles = "Customer")]
         public async Task<List<OrderDto>> GetListAsync()
         {
             return await getOrderService.GetListAsync();
@@ -41,6 +43,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-GetByIdAsync(Guid id)-]
         [HttpGet("{id}")]
+        [Authorize(Roles = "Customer")]
         public async Task<OrderDto> GetByIdAsync(Guid id)
         {
             return await getOrderService.GetByIdAsync(id);
@@ -49,6 +52,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-GetCountOrdersAsync()-]
         [HttpGet("count")]
+        [Authorize(Roles = "Admin")]
         public async Task<int> GetCountOrdersAsync()
         {
             return await getOrderService.GetCountOrdersAsync();
@@ -57,6 +61,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-CreateAsync(CreateOrUpdateOrder input)-]
         [HttpPost]
+        [Authorize(Roles = "Customer")]
         public async Task<OperationResult> CreateAsync(CreateOrUpdateOrder input)
         {
             return await createOrderService.CreateAsync(input);
@@ -65,6 +70,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-UpdateAsync(Guid id, CreateOrUpdateOrder input)-]
         [HttpPut]
+        [Authorize(Roles = "Customer")]
         public async Task<OperationResult> UpdateAsync(Guid id, CreateOrUpdateOrder input)
         {
             return await updateOrderService.UpdateAsync(id, input);
@@ -73,6 +79,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-RemoveAsync(Guid id)-]
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public async Task<OperationResult> RemoveAsync(Guid id)
         {
             return await deleteOrderService.RemoveAsync(id);

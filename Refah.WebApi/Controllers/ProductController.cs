@@ -31,7 +31,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-GetListAsync()-]
         [HttpGet("product")]
-        //[Authorize]
+        [Authorize(Roles = "Customer")]
         public async Task<List<ProductDto>> GetListAsync()
         {
             return await getProductService.GetListAsync();
@@ -40,6 +40,7 @@ namespace Refah.WebApi.Controllers
 
         #region [-GetByIdAsync(Guid id)-]
         [HttpGet("product/{id}")]
+        [Authorize(Roles = "Customer")]
         public async Task<ProductDto> GetByIdAsync(Guid id)
         {
             return await getProductService.GetByIdAsync(id);
@@ -48,6 +49,7 @@ namespace Refah.WebApi.Controllers
 
         #region [CreateAsync(CreateOrUpdateProductDto input)-]
         [HttpPost("product")]
+        [Authorize(Roles = "Customer")]
         public async Task CreateAsync(CreateOrUpdateProductDto input)
         {
             await createProductService.CreateAsync(input);
@@ -56,6 +58,7 @@ namespace Refah.WebApi.Controllers
 
         #region [UpdateAsync(CreateOrUpdateProductDto input)-]
         [HttpPut("product/{id}")]
+        [Authorize(Roles = "Customer")]
         public async Task UpdateAsync(Guid id, CreateOrUpdateProductDto input)
         {
             await updateProductService.UpdateAsync(id, input);
@@ -64,6 +67,7 @@ namespace Refah.WebApi.Controllers
 
         #region [DeleteAsync(CreateOrUpdateProductDto input)-]
         [HttpDelete("product/{id}")]
+        [Authorize(Roles = "Customer")]
         public async Task DeleteAsync(Guid id)
         {
             await deleteProductService.RemoveAsync(id);

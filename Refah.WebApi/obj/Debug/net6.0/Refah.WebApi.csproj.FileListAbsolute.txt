@@ -95,3 +95,7 @@ C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\R
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Refah.Application.Contract.pdb
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Refah.Domain.pdb
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Refah.Domain.Contract.pdb
+C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.WebApi\bin\Debug\net6.0\StackExchange.Redis.dll
