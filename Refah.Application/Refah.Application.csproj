@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Refah.Domain\Refah.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\OrderServices\" />
+    <Folder Include="Services\UserServices\" />
+  </ItemGroup>
+
 </Project>
