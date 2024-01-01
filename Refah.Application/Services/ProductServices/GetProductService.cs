@@ -2,7 +2,6 @@
 using Refah.Application.Abstracts.Services.Product_Services;
 using Refah.Application.Dtos.Product_Dtos;
 using Refah.Domain.Repositories;
-using Refah.Domain.Repositories.Product_Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductServices
