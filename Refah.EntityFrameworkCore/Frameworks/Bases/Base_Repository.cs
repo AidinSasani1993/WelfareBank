@@ -2,31 +2,72 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Refah.Domain.Contract.Abstracts;
+using System.Linq.Expressions;
 
 namespace Refah.EntityFrameworkCore.Frameworks.Bases
 {
-    public class Base_Repository<K_DbContext, T_Entity, T_Key> : IRepository 
-                                                        where K_DbContext : IdentityDbContext<IdentityUser>
-                                                        where T_Entity : class
+    public class Base_Repository<K_DbContext, T_Entity, T_Key> : IRepository<T_Entity, T_Key>
+                                                                          where T_Entity : class
+                                                                          where K_DbContext : IdentityDbContext<IdentityUser>
     {
-        #region [-ctor-]
+        public virtual K_DbContext DbContext { get; set; }
+        public virtual DbSet<T_Entity> DbSet { get; set; }
+
         public Base_Repository(K_DbContext dbContext)
         {
             DbContext = dbContext;
-            Db_Set = dbContext.Set<T_Entity>();
-        } 
-        #endregion
+            DbSet = dbContext.Set<T_Entity>();
+        }
 
-        #region [-props-]
-        public virtual K_DbContext DbContext { get; set; }
-        public virtual DbSet<T_Entity> Db_Set { get; set; }
-        #endregion
+        public async Task DeleteAsync(T_Key id)
+        {
+            var query = await DbSet.FindAsync(id);
+            DbSet.Remove(query);
+            await SaveChangesAsync();
+        }
 
-        #region [-SaveChangesAsync()-]
+        public async Task<bool> Exists(Expression<Func<T_Entity, bool>> expression)
+        {
+            return await DbContext.Set<T_Entity>().AnyAsync(expression);
+        }
+
+        public async Task<List<T_Entity>> GetAllAsync()
+        {
+            var query = DbSet.AsNoTracking().ToListAsync();
+            return await query;
+        }
+
+        public async Task<T_Entity> GetByIdAsync(T_Key id)
+        {
+            var query = await DbSet.FindAsync(id);
+            return query;
+        }
+
+        public async Task InsertAsync(T_Entity input)
+        {
+            using (DbContext)
+            {
+                await DbSet.AddAsync(input);
+                await SaveChangesAsync();
+            }
+        }
+
         public async Task SaveChangesAsync()
         {
             await DbContext.SaveChangesAsync();
-        } 
-        #endregion
+        }
+
+        public async Task UpdateAsync(T_Entity input)
+        {
+            DbSet.Attach(input);
+            DbContext.Entry(input).State = EntityState.Modified;
+            await SaveChangesAsync();
+        }
+
+        public List<T_Entity> GetAll()
+        {
+            var query = DbSet.ToList();
+            return query;
+        }
     }
 }

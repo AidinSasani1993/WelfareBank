@@ -7,6 +7,7 @@ namespace Refah.Domain.Aggregates
         #region [-props-]
         public string FName { get; private set; }
         public string LName { get; private set; }
+        public List<Order> Orders { get; set; }
         public DateTime CreatedDate { get; private set; }
         public DateTime? ModifyDate { get; private set; }
         public bool IsActive { get; private set; } = true;

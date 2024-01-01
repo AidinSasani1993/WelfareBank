@@ -24,6 +24,7 @@ namespace Refah.EntityFrameworkCore
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<CustomUser> CustomUsers { get; set; }
+        public DbSet<Order> Orders { get; set; }
         #endregion
 
         #region [-OnModelCreating(ModelBuilder builder)-]
