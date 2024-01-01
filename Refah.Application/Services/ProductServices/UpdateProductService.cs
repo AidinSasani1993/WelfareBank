@@ -1,7 +1,7 @@
 ﻿using Refah.Application.Abstracts.Services.Product_Services;
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.Product_Dtos;
-using Refah.Domain.Repositories.Product_Repositories;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductServices
@@ -10,16 +10,13 @@ namespace Refah.Application.Services.ProductServices
     public class UpdateProductService : IUpdateProductService
     {
         #region [-Field-]
-        private readonly IUpdateProductRepository updateProductRepository;
-        private readonly IGetProductRepository getProductRepository;
+        private readonly IProductRepository productRepository;
         #endregion
 
         #region [-ctor-]
-        public UpdateProductService(IUpdateProductRepository updateProductRepository,
-                                    IGetProductRepository getProductRepository)
+        public UpdateProductService(IProductRepository productRepository)
         {
-            this.updateProductRepository = updateProductRepository;
-            this.getProductRepository = getProductRepository;
+            this.productRepository = productRepository;
         }
         #endregion
 
@@ -27,11 +24,11 @@ namespace Refah.Application.Services.ProductServices
         public async Task<OperationResult> UpdateAsync(Guid id, CreateOrUpdateProductDto input)
         {
             var operation = new OperationResult();
-            var product = await getProductRepository.GetByIdAsync(id);
+            var product = await productRepository.GetByIdAsync(id);
 
-            if (Guid.Empty == input.CategoryRef) 
+            if (await productRepository.Exists(a => a.Id != id))
             {
-                return operation.Failed(ApplicationMessages.Failed);
+                return operation.NotFound(ApplicationMessages.RecordNotFound);
             }
 
             product.Modify(input.CategoryRef,
@@ -41,7 +38,7 @@ namespace Refah.Application.Services.ProductServices
                            input.UnitePrice,
                            input.Image);
 
-            await updateProductRepository.UpdateAsync(product);
+            await productRepository.UpdateAsync(product);
 
             return operation.Succedded(ApplicationMessages.Succeded);
         } 

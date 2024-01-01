@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Refah.Application.Abstracts.Services.Product_Services;
 using Refah.Application.Dtos.Product_Dtos;
+using Refah.Domain.Repositories;
 using Refah.Domain.Repositories.Product_Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
@@ -10,15 +11,15 @@ namespace Refah.Application.Services.ProductServices
     public class GetProductService : IGetProductService
     {
         #region [-Field-]
-        private readonly IGetProductRepository getProductRepository;
+        private readonly IProductRepository productRepository;
         private readonly IMapper mapper; 
         #endregion
 
         #region [-ctor-]
-        public GetProductService(IGetProductRepository getProductRepository, 
+        public GetProductService(IProductRepository productRepository, 
                                  IMapper mapper)
         {
-            this.getProductRepository = getProductRepository;
+            this.productRepository = productRepository;
             this.mapper = mapper;
         }
         #endregion
@@ -28,7 +29,7 @@ namespace Refah.Application.Services.ProductServices
         #region [-GetByIdAsync(Guid id)-]
         public async Task<ProductDto> GetByIdAsync(Guid id)
         {
-            var query = await getProductRepository.GetByIdAsync(id);
+            var query = await productRepository.GetByIdAsync(id);
             return mapper.Map<ProductDto>(query);
         }
         #endregion
@@ -36,7 +37,7 @@ namespace Refah.Application.Services.ProductServices
         #region [-GetListAsync()-]
         public async Task<List<ProductDto>> GetListAsync()
         {
-            var query = await getProductRepository.GetAllASync();
+            var query = await productRepository.GetAllAsync();
             return mapper.Map<List<ProductDto>>(query);
         }
         #endregion

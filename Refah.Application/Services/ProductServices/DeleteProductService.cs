@@ -1,6 +1,6 @@
 ﻿using Refah.Application.Abstracts.Services.Product_Services;
 using Refah.Application.Contract.Operation;
-using Refah.Domain.Repositories.Product_Repositories;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductServices
@@ -9,16 +9,13 @@ namespace Refah.Application.Services.ProductServices
     public class DeleteProductService : IDeleteProductService
     {
         #region [-Fields-]
-        private readonly IGetProductRepository getProductRepository;
-        private readonly IUpdateProductRepository updateProductRepository; 
+        private readonly IProductRepository productRepository;
         #endregion
 
         #region [-ctor-]
-        public DeleteProductService(IGetProductRepository getProductRepository,
-                                    IUpdateProductRepository updateProductRepository)
+        public DeleteProductService(IProductRepository productRepository)
         {
-            this.getProductRepository = getProductRepository;
-            this.updateProductRepository = updateProductRepository;
+            this.productRepository = productRepository;
         }
         #endregion
 
@@ -27,14 +24,14 @@ namespace Refah.Application.Services.ProductServices
         {
             var operation = new OperationResult();
 
-            var product = await getProductRepository.GetByIdAsync(id);
+            var product = await productRepository.GetByIdAsync(id);
 
-            if (product.Id == null)
+            if (await productRepository.Exists(a => a.Id != id))
             {
-                operation.Failed(ApplicationMessages.Failed);
+                return operation.NotFound(ApplicationMessages.RecordNotFound);
             }
 
-            await updateProductRepository.UpdateAsync(product);
+            await productRepository.UpdateAsync(product);
 
             return operation.Succedded(ApplicationMessages.Succeded);
         } 

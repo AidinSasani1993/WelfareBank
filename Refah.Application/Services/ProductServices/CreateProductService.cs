@@ -2,7 +2,7 @@
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.Product_Dtos;
 using Refah.Domain.Aggregates;
-using Refah.Domain.Repositories.Product_Repositories;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductServices
@@ -11,13 +11,13 @@ namespace Refah.Application.Services.ProductServices
     public class CreateProductService : ICreateProductService
     {
         #region [-Field-]
-        private readonly ICreateProductRepository createProductRepository; 
+        private readonly IProductRepository productRepository; 
         #endregion
 
         #region [-ctor-]
-        public CreateProductService(ICreateProductRepository createProductRepository)
+        public CreateProductService(IProductRepository productRepository)
         {
-            this.createProductRepository = createProductRepository;
+            this.productRepository = productRepository;
         }
         #endregion
 
@@ -38,7 +38,7 @@ namespace Refah.Application.Services.ProductServices
                 return operation.Failed(ApplicationMessages.Failed);
             }
 
-            await createProductRepository.InsertAsync(product);
+            await productRepository.InsertAsync(product);
 
             return operation.Succedded(ApplicationMessages.Succeded);
         } 
