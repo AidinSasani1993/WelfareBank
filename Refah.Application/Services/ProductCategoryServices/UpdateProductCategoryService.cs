@@ -2,7 +2,7 @@
 using Refah.Application.Abstracts.Services.ProductCategory_Services;
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.ProductCategory_Dtos;
-using Refah.Domain.Repositories.Product_Category;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductCategoryServices
@@ -11,18 +11,15 @@ namespace Refah.Application.Services.ProductCategoryServices
     public class UpdateProductCategoryService : IUpdateProductCategoryService
     {
         #region [-Field-]
-        private readonly IUpdateProductCategoryRepository updateProductCategoryRepository;
-        private readonly IGetProductCategoryRepository getProductCategoryRepository;
+        private readonly IProductCategoryRepository productCategoryRepository;
         private readonly IMapper mapper;
         #endregion
 
         #region [-ctor-]
-        public UpdateProductCategoryService(IUpdateProductCategoryRepository updateProductCategoryRepository,
-                                            IGetProductCategoryRepository getProductCategoryRepository,
+        public UpdateProductCategoryService(IProductCategoryRepository productCategoryRepository,
                                             IMapper mapper)
         {
-            this.updateProductCategoryRepository = updateProductCategoryRepository;
-            this.getProductCategoryRepository = getProductCategoryRepository;
+            this.productCategoryRepository = productCategoryRepository;
             this.mapper = mapper;
         }
         #endregion
@@ -31,10 +28,15 @@ namespace Refah.Application.Services.ProductCategoryServices
         public async Task<OperationResult> UpdateAsync(Guid id, CreateOrUpdateProductCategoryDto input)
         {
             var operation = new OperationResult();
-            var category = await getProductCategoryRepository.GetByIdAsync(id);
+            var category = await productCategoryRepository.GetByIdAsync(id);
+
+            if (await productCategoryRepository.Exists(a => a.Id != id))
+            {
+                return operation.Failed("NotFound");
+            }
 
             category.Modify(input.Title);
-            await updateProductCategoryRepository.UpdateAsync(category);
+            await productCategoryRepository.UpdateAsync(category);
             return operation.Succedded(ApplicationMessages.Succeded);
         } 
         #endregion

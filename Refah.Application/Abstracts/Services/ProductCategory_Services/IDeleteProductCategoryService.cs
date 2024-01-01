@@ -3,7 +3,7 @@ using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Abstracts.Services.ProductCategory_Services
 {
-    [TransientService]
+    [ScopedService]
     public interface IDeleteProductCategoryService
     {
         Task<OperationResult> RemoveAsync(Guid id);

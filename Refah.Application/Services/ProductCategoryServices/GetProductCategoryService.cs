@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Refah.Application.Abstracts.Services.ProductCategory_Services;
 using Refah.Application.Dtos.ProductCategory_Dtos;
-using Refah.Domain.Repositories.Product_Category;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductCategoryServices
@@ -10,15 +10,15 @@ namespace Refah.Application.Services.ProductCategoryServices
     public class GetProductCategoryService : IGetProductCategoryService
     {
         #region [-Fields-]
-        private readonly IGetProductCategoryRepository getProductCategoryRepository;
+        private readonly IProductCategoryRepository productCategoryRepository;
         private readonly IMapper mapper; 
         #endregion
 
         #region [-ctor-]
-        public GetProductCategoryService(IGetProductCategoryRepository getProductCategoryRepository,
+        public GetProductCategoryService(IProductCategoryRepository productCategoryRepository,
                                          IMapper mapper)
         {
-            this.getProductCategoryRepository = getProductCategoryRepository;
+            this.productCategoryRepository = productCategoryRepository;
             this.mapper = mapper;
         }
         #endregion
@@ -28,7 +28,7 @@ namespace Refah.Application.Services.ProductCategoryServices
         #region [-GetByIdAsync(Guid id)-]
         public async Task<ProductCategoryDto> GetByIdAsync(Guid id)
         {
-            var query = await getProductCategoryRepository.GetByIdAsync(id);
+            var query = await productCategoryRepository.GetByIdAsync(id);
             return mapper.Map<ProductCategoryDto>(query);
         }
         #endregion
@@ -36,7 +36,7 @@ namespace Refah.Application.Services.ProductCategoryServices
         #region [-GetListAsync()-]
         public async Task<List<ProductCategoryDto>> GetListAsync()
         {
-            var query = await getProductCategoryRepository.GetAllASync();
+            var query = await productCategoryRepository.GetAllAsync();
             return mapper.Map<List<ProductCategoryDto>>(query);
         }
         #endregion

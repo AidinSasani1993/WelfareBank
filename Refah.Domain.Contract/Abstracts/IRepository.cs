@@ -1,7 +1,16 @@
-﻿namespace Refah.Domain.Contract.Abstracts
+﻿using System.Linq.Expressions;
+
+namespace Refah.Domain.Contract.Abstracts
 {
-    public interface IRepository
+    public interface IRepository<TEntity, T_Key> where TEntity : class
     {
+        Task<TEntity> GetByIdAsync(T_Key id);
+        Task<List<TEntity>> GetAllAsync();
+        Task InsertAsync(TEntity input);
+        Task UpdateAsync(TEntity input);
+        Task DeleteAsync(T_Key id);
+        Task<bool> Exists(Expression<Func<TEntity, bool>> expression);
         Task SaveChangesAsync();
+        List<TEntity> GetAll();
     }
 }

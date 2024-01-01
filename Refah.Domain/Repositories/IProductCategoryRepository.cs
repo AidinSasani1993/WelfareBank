@@ -2,10 +2,10 @@
 using Refah.Domain.Contract.Abstracts;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
-namespace Refah.Domain.Repositories.Product_Category
+namespace Refah.Domain.Repositories
 {
     [ScopedService]
-    public interface IUpdateProductCategoryRepository : IUpdateRepository<ProductCategory, Guid>
+    public interface IProductCategoryRepository : IRepository<ProductCategory, Guid>
     {
     }
 }

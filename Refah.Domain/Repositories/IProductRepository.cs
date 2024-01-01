@@ -2,10 +2,11 @@
 using Refah.Domain.Contract.Abstracts;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
-namespace Refah.Domain.Repositories.Product_Repositories
+namespace Refah.Domain.Repositories
 {
     [ScopedService]
-    public interface ICreateProductRepository : ICreateRepository<Product, Guid>
+    public interface IProductRepository : IRepository<Product, Guid>
     {
+        Task<Product> GetByCodeAsync(string code);
     }
 }

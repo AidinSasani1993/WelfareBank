@@ -2,10 +2,11 @@
 using Refah.Domain.Contract.Abstracts;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
-namespace Refah.Domain.Repositories.Product_Category
+namespace Refah.Domain.Repositories
 {
     [ScopedService]
-    public interface IDeleteProductCategoryRepository : IDeleteRepository<ProductCategory, Guid>
+    public interface IUserRepository : IRepository<CustomUser, Guid>
     {
+        Task<CustomUser> GetByUserName(string userName);
     }
 }

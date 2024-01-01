@@ -1,24 +1,21 @@
 ﻿using Refah.Application.Abstracts.Services.ProductCategory_Services;
 using Refah.Application.Contract.Operation;
-using Refah.Domain.Repositories.Product_Category;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductCategoryServices
 {
-    [TransientService]
+    [ScopedService]
     public class DeleteProductCategoryService : IDeleteProductCategoryService
     {
         #region [-Field-]
-        private readonly IGetProductCategoryRepository getProductCategoryRepository;
-        private readonly IUpdateProductCategoryRepository updateProductCategoryRepository;
+        private readonly IProductCategoryRepository productCategoryRepository;
         #endregion
 
         #region [-ctor-]
-        public DeleteProductCategoryService(IGetProductCategoryRepository getProductCategoryRepository,
-                                            IUpdateProductCategoryRepository updateProductCategoryRepository)
+        public DeleteProductCategoryService(IProductCategoryRepository productCategoryRepository)
         {
-            this.getProductCategoryRepository = getProductCategoryRepository;
-            this.updateProductCategoryRepository = updateProductCategoryRepository;
+            this.productCategoryRepository = productCategoryRepository;
         }
         #endregion
 
@@ -26,10 +23,15 @@ namespace Refah.Application.Services.ProductCategoryServices
         public async Task<OperationResult> RemoveAsync(Guid id)
         {
             var operation = new OperationResult();
-            var category = await getProductCategoryRepository.GetByIdAsync(id);
+            var category = await productCategoryRepository.GetByIdAsync(id);
+            
+            if (await productCategoryRepository.Exists(a => a.Id != id))
+            {
+                return operation.NotFound(ApplicationMessages.RecordNotFound);
+            }
+
             category.Delete();
-            //await repository.SaveChangesAsync();
-            await updateProductCategoryRepository.UpdateAsync(category);
+            await productCategoryRepository.UpdateAsync(category);
             return operation.Succedded(ApplicationMessages.Succeded);
         } 
         #endregion

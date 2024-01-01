@@ -2,7 +2,7 @@
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.ProductCategory_Dtos;
 using Refah.Domain.Aggregates;
-using Refah.Domain.Repositories.Product_Category;
+using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Services.ProductCategoryServices
@@ -11,13 +11,13 @@ namespace Refah.Application.Services.ProductCategoryServices
     public class CreateProductCategoryService : ICreateProductCategoryService
     {
         #region [-Field-]
-        private readonly ICreateProductCategoryRepository createProductCategoryRepository;
+        private readonly IProductCategoryRepository productCategoryRepository;
         #endregion
 
         #region [-ctor-]
-        public CreateProductCategoryService(ICreateProductCategoryRepository createProductCategoryRepository)
+        public CreateProductCategoryService(IProductCategoryRepository productCategoryRepository)
         {
-            this.createProductCategoryRepository = createProductCategoryRepository;
+            this.productCategoryRepository = productCategoryRepository;
         }
         #endregion
 
@@ -26,7 +26,7 @@ namespace Refah.Application.Services.ProductCategoryServices
         {
             var operation = new OperationResult();
             var category = new ProductCategory(input.Title);
-            await createProductCategoryRepository.InsertAsync(category);
+            await productCategoryRepository.InsertAsync(category);
             return operation.Succedded(ApplicationMessages.Succeded);
         } 
         #endregion
