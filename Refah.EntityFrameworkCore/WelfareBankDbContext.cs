@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Refah.Domain.Aggregates;
+using Refah.Domain.Entities;
 using Refah.EntityFrameworkCore.Configurations;
 
 namespace Refah.EntityFrameworkCore

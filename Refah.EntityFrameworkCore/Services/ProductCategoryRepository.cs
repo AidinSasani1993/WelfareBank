@@ -1,4 +1,4 @@
-﻿using Refah.Domain.Aggregates;
+﻿using Refah.Domain.Entities;
 using Refah.Domain.Repositories;
 using Refah.EntityFrameworkCore.Frameworks.Bases;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;

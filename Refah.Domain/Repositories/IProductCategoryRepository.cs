@@ -1,4 +1,4 @@
-﻿using Refah.Domain.Aggregates;
+﻿using Refah.Domain.Entities;
 using Refah.Domain.Contract.Abstracts;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 

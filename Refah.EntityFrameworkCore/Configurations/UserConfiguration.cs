@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Refah.Domain.Aggregates;
+using Refah.Domain.Entities;
 
 namespace Refah.EntityFrameworkCore.Configurations
 {

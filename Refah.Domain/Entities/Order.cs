@@ -1,6 +1,6 @@
 ﻿using Refah.Domain.Framework.Bases;
 
-namespace Refah.Domain.Aggregates
+namespace Refah.Domain.Entities
 {
     public class Order : BaseEntity
     {

@@ -1,5 +1,5 @@
 ﻿using Refah.Application.Dtos.User_Dtos;
-using Refah.Domain.Aggregates;
+using Refah.Domain.Entities;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Application.Abstracts.Services.User_Services
