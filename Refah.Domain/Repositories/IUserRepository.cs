@@ -1,5 +1,5 @@
 ﻿using Refah.Domain.Entities;
-using Refah.Domain.Contract.Abstracts;
+using Refah.Domain.Framework.Abstracts;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace Refah.Domain.Repositories

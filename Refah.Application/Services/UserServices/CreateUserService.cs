@@ -3,7 +3,6 @@ using Refah.Application.Abstracts.Services.User_Services;
 using Refah.Application.Contract.Operation;
 using Refah.Application.Dtos.User_Dtos;
 using Refah.Domain.Entities;
-using Refah.Domain.Factories;
 using Refah.Domain.Repositories;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
@@ -14,17 +13,14 @@ namespace Refah.Application.Services.UserServices
     {
         #region [-Fields-]
         private readonly IUserRepository userRepository;
-        private readonly UserFactoryService userFactoryService;
         private readonly IMapper mapper;
         #endregion
 
         #region [-ctor-]
         public CreateUserService(IUserRepository userRepository,
-                                 UserFactoryService userFactoryService,
                                  IMapper mapper)
         {
             this.userRepository = userRepository;
-            this.userFactoryService = userFactoryService;
             this.mapper = mapper;
         }
         #endregion
@@ -46,15 +42,15 @@ namespace Refah.Application.Services.UserServices
         #endregion
 
         #region [-CreateByUserNameAsync(CreateOrUpdateUser input)-]
-        public async Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input)
-        {
-            var user = await userFactoryService.CreateAsync(input.FName,
-                                               input.LName,
-                                               input.UserName,
-                                               input.Password,
-                                               input.Email);
-            return mapper.Map<CustomUser, UserDto>(user);
-        } 
+        //public async Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input)
+        //{
+        //    var user = await userFactoryService.CreateAsync(input.FName,
+        //                                       input.LName,
+        //                                       input.UserName,
+        //                                       input.Password,
+        //                                       input.Email);
+        //    return mapper.Map<CustomUser, UserDto>(user);
+        //} 
         #endregion
 
     }

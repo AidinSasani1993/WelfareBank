@@ -4,8 +4,8 @@ namespace Refah.Domain.Entities
 {
     public class ProductCategory : BaseEntity
     {
-        public string Title { get; private set; }
-        public List<Product> Products { get; private set; }
+        public string Title { get; protected set; }
+        public List<Product> Products { get; protected set; }
 
 
         public ProductCategory(string title)

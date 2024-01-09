@@ -917,19 +917,6 @@
             "related": ".xml"
           }
         }
-      },
-      "Refah.Domain.Contract/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
-        },
-        "compile": {
-          "bin/placeholder/Refah.Domain.Contract.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Refah.Domain.Contract.dll": {}
-        }
       }
     }
   },
@@ -2305,11 +2292,6 @@
         "tanvirarjel.extensions.microsoft.dependencyinjection.2.2.0.nupkg.sha512",
         "tanvirarjel.extensions.microsoft.dependencyinjection.nuspec"
       ]
-    },
-    "Refah.Domain.Contract/1.0.0": {
-      "type": "project",
-      "path": "../Refah.Domain.Contract/Refah.Domain.Contract.csproj",
-      "msbuildProject": "../Refah.Domain.Contract/Refah.Domain.Contract.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2318,7 +2300,6 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.25",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.25",
-      "Refah.Domain.Contract >= 1.0.0",
       "TanvirArjel.Extensions.Microsoft.DependencyInjection >= 2.2.0"
     ]
   },
@@ -2348,11 +2329,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Domain.Contract\\Refah.Domain.Contract.csproj": {
-              "projectPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Domain.Contract\\Refah.Domain.Contract.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

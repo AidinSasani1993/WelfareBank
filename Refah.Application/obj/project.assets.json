@@ -908,7 +908,6 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
-          "Refah.Domain.Contract": "1.0.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
         },
         "compile": {
@@ -916,19 +915,6 @@
         },
         "runtime": {
           "bin/placeholder/Refah.Domain.dll": {}
-        }
-      },
-      "Refah.Domain.Contract/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
-        },
-        "compile": {
-          "bin/placeholder/Refah.Domain.Contract.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Refah.Domain.Contract.dll": {}
         }
       }
     }
@@ -2275,11 +2261,6 @@
       "type": "project",
       "path": "../Refah.Domain/Refah.Domain.csproj",
       "msbuildProject": "../Refah.Domain/Refah.Domain.csproj"
-    },
-    "Refah.Domain.Contract/1.0.0": {
-      "type": "project",
-      "path": "../Refah.Domain.Contract/Refah.Domain.Contract.csproj",
-      "msbuildProject": "../Refah.Domain.Contract/Refah.Domain.Contract.csproj"
     }
   },
   "projectFileDependencyGroups": {

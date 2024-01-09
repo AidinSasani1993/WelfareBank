@@ -6,11 +6,11 @@ namespace Refah.Domain.Framework.Bases
     {
         #region [-props-]
         public Guid Id { get; set; }
-        public bool IsDeleted { get; private set; }
-        public DateTime CreatedDate { get; private set; }
-        public DateTime? ModifyDate { get; private set; }
-        public DateTime? DeletedDate { get; private set; }
-        public DateTime? ActiveDate { get; private set; }
+        public bool IsDeleted { get; protected set; }
+        public DateTime CreatedDate { get; protected set; }
+        public DateTime? ModifyDate { get; protected set; }
+        public DateTime? DeletedDate { get; protected set; }
+        public DateTime? ActiveDate { get; protected set; }
         #endregion
 
         #region [-Methods-]

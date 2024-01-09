@@ -5,10 +5,10 @@ namespace Refah.Domain.Entities
     public class Order : BaseEntity
     {
         #region [-props-]
-        public double TotalAmount { get; private set; }
-        public bool? IsCanceled { get; private set; } = false;
-        public CustomUser CustomUser { get; private set; }
-        public Guid UserRef { get; private set; } 
+        public double TotalAmount { get; protected set; }
+        public bool? IsCanceled { get; protected set; } = false;
+        public CustomUser CustomUser { get; protected set; }
+        public Guid UserRef { get; protected set; } 
         #endregion
 
         #region [-ctor-]

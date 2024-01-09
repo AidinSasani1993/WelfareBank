@@ -12,7 +12,6 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.25",
-          "Refah.Domain.Contract": "1.0.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
         },
         "runtime": {
@@ -583,14 +582,6 @@
             "fileVersion": "2.2.0.0"
           }
         }
-      },
-      "Refah.Domain.Contract/1.0.0": {
-        "dependencies": {
-          "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
-        },
-        "runtime": {
-          "Refah.Domain.Contract.dll": {}
-        }
       }
     }
   },
@@ -956,11 +947,6 @@
       "sha512": "sha512-UDpEx59cJy2H7Ic1+nqimTbHfYOuKSNuP0V+SQhXOiZO3mDn0Vd63EMfviIBpx6jnyaLLKm2R8cprzdj2hMn6g==",
       "path": "tanvirarjel.extensions.microsoft.dependencyinjection/2.2.0",
       "hashPath": "tanvirarjel.extensions.microsoft.dependencyinjection.2.2.0.nupkg.sha512"
-    },
-    "Refah.Domain.Contract/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

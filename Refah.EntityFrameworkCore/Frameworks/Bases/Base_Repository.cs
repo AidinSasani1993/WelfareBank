@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Refah.Domain.Contract.Abstracts;
+using Refah.Domain.Framework.Abstracts;
 using System.Linq.Expressions;
 
 namespace Refah.EntityFrameworkCore.Frameworks.Bases
@@ -9,6 +9,7 @@ namespace Refah.EntityFrameworkCore.Frameworks.Bases
     public class Base_Repository<K_DbContext, T_Entity, T_Key> : IRepository<T_Entity, T_Key>
                                                                           where T_Entity : class
                                                                           where K_DbContext : IdentityDbContext<IdentityUser>
+                                                                          where T_Key : struct
     {
         public virtual K_DbContext DbContext { get; set; }
         public virtual DbSet<T_Entity> DbSet { get; set; }

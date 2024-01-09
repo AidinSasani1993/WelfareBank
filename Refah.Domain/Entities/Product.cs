@@ -5,13 +5,13 @@ namespace Refah.Domain.Entities
     public class Product : BaseEntity
     {
         #region [-props-]
-        public ProductCategory ProductCategory { get; private set; }
-        public Guid CategoryRef { get; private set; }
-        public string Code { get; private set; }
-        public string Title { get; private set; }
-        public int Amount { get; private set; }
-        public decimal UnitePrice { get; private set; }
-        public string Image { get; private set; } 
+        public ProductCategory ProductCategory { get; protected set; }
+        public Guid CategoryRef { get; protected set; }
+        public string Code { get; protected set; }
+        public string Title { get; protected set; }
+        public int Amount { get; protected set; }
+        public decimal UnitePrice { get; protected set; }
+        public string Image { get; protected set; } 
         #endregion
 
         #region [-ctor-]

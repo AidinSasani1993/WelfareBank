@@ -59,11 +59,11 @@ namespace Refah.WebApi.Controllers
         #endregion
 
         #region [-CreateByUserNameAsync(CreateOrUpdateUser input)-]
-        [HttpPost("custom")]
-        public async Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input)
-        {
-            return await createUserService.CreateByUserNameAsync(input);
-        }
+        //[HttpPost("custom")]
+        //public async Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input)
+        //{
+        //    return await createUserService.CreateByUserNameAsync(input);
+        //}
         #endregion
 
         #region [-RemoveAsync(Guid id)-]

@@ -580,19 +580,10 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
-          "Refah.Domain.Contract": "1.0.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
         },
         "runtime": {
           "Refah.Domain.dll": {}
-        }
-      },
-      "Refah.Domain.Contract/1.0.0": {
-        "dependencies": {
-          "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
-        },
-        "runtime": {
-          "Refah.Domain.Contract.dll": {}
         }
       }
     }
@@ -952,11 +943,6 @@
       "sha512": ""
     },
     "Refah.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Refah.Domain.Contract/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

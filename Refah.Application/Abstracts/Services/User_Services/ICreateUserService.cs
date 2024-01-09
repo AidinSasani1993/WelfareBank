@@ -8,6 +8,6 @@ namespace Refah.Application.Abstracts.Services.User_Services
     public interface ICreateUserService
     {
         Task<OperationResult> CreateAsync(CreateOrUpdateUser input);
-        Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input);
+        //Task<UserDto> CreateByUserNameAsync(CreateOrUpdateUser input);
     }
 }

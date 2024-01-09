@@ -2,14 +2,11 @@ C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\R
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\Refah.Domain.runtimeconfig.json
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\Refah.Domain.dll
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\Refah.Domain.pdb
-C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\Refah.Domain.Contract.dll
-C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\bin\Debug\net6.0\Refah.Domain.Contract.pdb
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.csproj.AssemblyReference.cache
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.AssemblyInfoInputs.cache
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.AssemblyInfo.cs
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.csproj.CoreCompileInputs.cache
-C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.csproj.CopyComplete
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.dll
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\refint\Refah.Domain.dll
 C:\Users\aidin\Desktop\Bank_Refah\Bank_Refah_SOA\Refah.Domain\obj\Debug\net6.0\Refah.Domain.pdb

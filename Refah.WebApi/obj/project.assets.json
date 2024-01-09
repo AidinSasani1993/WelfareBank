@@ -1421,7 +1421,6 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25",
-          "Refah.Domain.Contract": "1.0.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
         },
         "compile": {
