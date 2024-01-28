@@ -1391,7 +1391,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "Refah.Application.Contract": "1.0.0",
+          "Refah.Application": "1.0.0",
           "Refah.Domain": "1.0.0",
           "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
         },
@@ -1400,19 +1400,6 @@
         },
         "runtime": {
           "bin/placeholder/Refah.Application.dll": {}
-        }
-      },
-      "Refah.Application.Contract/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "TanvirArjel.Extensions.Microsoft.DependencyInjection": "2.2.0"
-        },
-        "compile": {
-          "bin/placeholder/Refah.Application.Contract.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Refah.Application.Contract.dll": {}
         }
       },
       "Refah.Domain/1.0.0": {
@@ -3821,11 +3808,6 @@
       "path": "../Refah.Application/Refah.Application.csproj",
       "msbuildProject": "../Refah.Application/Refah.Application.csproj"
     },
-    "Refah.Application.Contract/1.0.0": {
-      "type": "project",
-      "path": "../Refah.Application.Contract/Refah.Application.Contract.csproj",
-      "msbuildProject": "../Refah.Application.Contract/Refah.Application.Contract.csproj"
-    },
     "Refah.Domain/1.0.0": {
       "type": "project",
       "path": "../Refah.Domain/Refah.Domain.csproj",
@@ -3971,5 +3953,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1108",
+      "level": "Error",
+      "message": "Cycle detected. \r\n  Refah.WebApi -> Refah.Application -> Refah.Application.",
+      "libraryId": "Refah.Application",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

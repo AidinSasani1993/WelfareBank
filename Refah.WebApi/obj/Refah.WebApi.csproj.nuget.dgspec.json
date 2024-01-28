@@ -8,10 +8,10 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\Refah.Application.Contract.csproj",
-        "projectName": "Refah.Application.Contract",
+        "projectName": "Refah.Application",
         "projectPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\Refah.Application.Contract.csproj",
         "packagesPath": "C:\\Users\\aidin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\obj\\",
+        "outputPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aidin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +27,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\Refah.Application.Contract.csproj": {
+                "projectPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Application.Contract\\Refah.Application.Contract.csproj"
+              },
+              "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Domain\\Refah.Domain.csproj": {
+                "projectPath": "C:\\Users\\aidin\\Desktop\\Bank_Refah\\Bank_Refah_SOA\\Refah.Domain\\Refah.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

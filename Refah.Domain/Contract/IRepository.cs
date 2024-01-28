@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Refah.Domain.Framework.Abstracts
+namespace Refah.Domain.Contract
 {
     public interface IRepository<TEntity, T_Key> where TEntity : class where T_Key : struct
     {

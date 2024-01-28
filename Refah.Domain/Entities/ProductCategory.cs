@@ -6,6 +6,7 @@ namespace Refah.Domain.Entities
     {
         public string Title { get; protected set; }
         public List<Product> Products { get; protected set; }
+        public string CategoryCode { get; set; }
 
 
         public ProductCategory(string title)
